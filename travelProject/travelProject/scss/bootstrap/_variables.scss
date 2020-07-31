@@ -1122,3 +1122,93 @@ $positions: static, relative, absolute, fixed, sticky !default;
 
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
+
+//
+$colors: (
+  "purple": #a03af0,
+  "maroon": #8d021f,
+  "pink": #f568b4,
+  "blue": #3974e2,
+  "madison": #313e4d,
+  "brown": #4f331b,
+  "green": #008000,
+  "olive": #708238,
+  "teal": #15b49c,
+  "red": #c9302c,
+  "valencia": #d64646,
+  "orange": #ff681f,
+  "mustard": #f0a13c,
+  "yellow": #ffc107,
+  "white": #ffffff,
+  "off-white": #f5f5f5,
+  "gray": #d2d6de,
+  "muted": #777777,
+  "charcoal": #1f282e,
+  "black": #111111,
+  "default": #bdc3c7,
+  "info": #66c6e6,
+  "primary": #428bca,
+  "warning": #f0ad4e,
+  "success": #3c763d,
+  "danger": #d9534f,
+  "themeColor": #00539c
+);
+
+:root {
+  @each $color-name, $value in $colors {
+    $dashColor: "--" +#{$color-name};
+    #{$dashColor}: #{$value} + !important;
+    #{$dashColor}-light: lighten($value, 10%);
+    #{$dashColor}-dark: darken($value, 10%);
+
+    @for $i from 1 through 9 {
+      #{$dashColor}-alpha#{$i}: rgba($value, ($i/10));
+    }
+  }
+}
+
+@each $color-name, $value in $colors {
+  $dashColor: "--" +#{$color-name};
+  .bg-#{$color-name} {
+    background-color: var(#{$dashColor});
+  }
+  @for $i from 1 through 9 {
+    .bg-#{$color-name}-alpha#{$i} {
+      background-color: var(#{$dashColor}-alpha#{$i});
+    }
+  }
+  .bg-#{$color-name}-light {
+    background-color: lighten($value, 10%);
+  }
+  .bg-#{$color-name}-dark {
+    background-color: darken($value, 10%);
+  }
+}
+
+@each $color-name, $value in $colors {
+  $dashColor: "--" +#{$color-name};
+  .text-#{$color-name} {
+    color: var(#{$dashColor});
+  }
+  @for $i from 1 through 9 {
+    .text-#{$color-name}-alpha#{$i} {
+      color: var(#{$dashColor}-alpha#{$i});
+    }
+  }
+  .text-#{$color-name}-light {
+    color: lighten($value, 10%);
+  }
+  .text-#{$color-name}-dark {
+    color: darken($value, 10%);
+  }
+}
+
+$phone-width: 300px;
+$phone-width-portrait: 400px;
+$phone-landscape-width: 568px;
+$tablet-portrait-width: 768px;
+$tablet-landscape-width: 1024px;
+$desktop-width: 1280px;
+$laptop-landscape-width: 1366px;
+$desktop-wide-width: 1440px;
+$container-padding: 10px;
