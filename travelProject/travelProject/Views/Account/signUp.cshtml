@@ -1,0 +1,70 @@
+﻿@model travelProject.Models.tbl_user
+
+@{
+    ViewBag.Title = "signUp";
+    Layout = "~/Views/Shared/_accountLayout.cshtml";
+}
+
+
+<div class="sign-up">
+    <div class="content">
+        <div class="logo-box">
+            <img class="logo-img" src="~/images/account/logo.jpg">
+            <h5 class="heading">ADMIN PANEL</h5>
+            <p class="sub-heading">Control Panel Sign Up</p>
+        </div>
+        <div class="field-box">
+            @using (Html.BeginForm("signUp", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    @Html.TextBoxFor(name => name.name, new { type = "text", @class = "form-control input-sm", placeholder = "Enter Your Name", required = "required" })
+                    <span></span>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    @Html.TextBoxFor(email => email.email, new { type = "email", @class = "form-control input-sm", placeholder = "Enter Email Address", required = "required" })
+
+                    <span></span>
+                </div>
+      
+                <div class="input-group">
+                    <i class="fas fa-images"></i>
+                    <input type="file" name="picture" class="form-control input-sm password-field" placeholder="Enter Password" required="required" />
+                    <span></span>
+                </div>
+                <div class="input-group">
+                    <img src="/img/user-role.svg" height="18px" width="18px">
+                    <div class="sel style1">
+                        <!--<select class="form-control input-sm">
+                             <option value="none">Select</option>
+                             <option value="0">Admin</option>
+                             <option value="1">User</option>
+                         </select>-->
+                        <select name="Role" required class="form-control input-sm">
+                            <option value="" selected disabled hidden>Select an Option</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Employee</option>
+                            <option value="3">User</option>
+                        </select>
+                    </div>
+                    <span></span>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-key"></i>
+                    @Html.TextBoxFor(password => password.pass, new { type = "password", @class = "form-control input-sm password-field", placeholder = "Enter Password", required = "required" })
+                    <i id="password-icon-btn" class="fas fa-eye-slash"></i>
+                    <span></span>
+                </div>
+                <div class="d-flex justify-content-between text-white-alpha3">
+                    <a href="@Url.Action("Login", "Account")">Login </a>
+                </div>
+                <button type="submit" class="btn btn-md bg-themeColor-light m-b-70">Sign Up</button>
+            }
+        </div>
+    </div>
+</div>
+
+

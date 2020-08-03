@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_accountLayout.cshtml";
+}
+
+<div class="login">
+    <div class="content">
+        <div class="logo-box">
+            <img class="logo-img" src="~/images/account/logo.jpg">
+            <h5 class="heading">ADMIN PANEL</h5>
+            <p class="sub-heading">Control Panel Login</p>
+        </div>
+        <form class="field-box">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="text" class="form-control input-sm" placeholder="Enter Email Address" required="required" />
+                <span></span>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-key"></i>
+                <input type="password" class="form-control input-sm password-field" placeholder="Enter Password" required="required" />
+                <i id="password-icon-btn" class="fas fa-eye-slash"></i>
+                <span></span>
+            </div>
+            <div class="d-flex justify-content-between text-white-alpha3">
+                <a href="@Url.Action("signUp","Account")">Sign Up </a>
+                <a href="@Url.Action("forgotPassword","Account")">Forgot Password</a>
+            </div>
+            <button class="btn btn-md bg-themeColor-light ">Login</button>
+        </form>
+    </div>
+</div>
+

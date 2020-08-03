@@ -1,0 +1,38 @@
+﻿@model adminPanel.Models.user_table
+@{
+    ViewBag.Title = "forgotPassword";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+
+<div class="login">
+    <div class="content">
+        <div class="logo-box">
+            <img class="logo-img" src="/img/logo.jpg">
+            <h5 class="heading">ADMIN PANEL</h5>
+            <p class="sub-heading">Control Panel Forgot Password</p>
+        </div>
+        <div class="field-box">
+            @using (Html.BeginForm("forgotPassword", "Login", FormMethod.Post))
+            {
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    @Html.TextBoxFor(name => name.Name, new { type = "text", @class = "form-control input-sm", placeholder = "Enter Your Name", required = "required" })
+                    <span></span>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    @Html.TextBoxFor(email => email.Email, new { type = "email", @class = "form-control input-sm", placeholder = "Enter Email Address", required = "required" })
+                    <span></span>
+                </div>
+                <div class="d-flex justify-content-between text-white-alpha3">
+                    <a href="@Url.Action("login","Login")">Login </a>
+                </div>
+                <h6 class="bg-themeColor">@ViewBag.message</h6>
+                <button class="btn btn-md bg-themeColor-light">Submit</button>
+            }
+        </div>
+    </div>
+</div>
+
+

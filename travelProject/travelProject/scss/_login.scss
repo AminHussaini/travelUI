@@ -1,0 +1,170 @@
+.login,
+.sign-up,
+.forgot-password,
+.reset-password {
+	background-image: url('/images/account/mountain.jpg');
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	@extend %posRelative;
+	&:before {
+		content: '';
+		@extend %posAbsolute;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100%;
+		background-color: var(--black-alpha7);
+	}
+	.content {
+		@extend %floatToCenter;
+		min-height: 500px;
+		width: 360px;
+		border-radius: 10px;
+		background: rgb(30, 34, 43);
+		background: linear-gradient(180deg, rgba(30, 34, 43, 1) 36%, rgba(38, 45, 53, 1) 78%, rgba(43, 54, 60, 1) 85%);
+		overflow: hidden;
+		transition: box-shadow 1000ms;
+		&:before {
+			content: '';
+			@extend %posAbsolute;
+			z-index: -1;
+			left: 0;
+			bottom: 0;
+			height: 100px;
+			width: 100%;
+			background-image: url('images/account/wave.png');
+			background-size: cover;
+			background-position: center;
+		}
+		.logo-box {
+			margin: 30px 0;
+			text-align: center;
+			.logo-img {
+				height: 70px;
+				width: 70px;
+				margin-bottom: 10px;
+			}
+			.heading {
+				color: var(--white);
+			}
+			.sub-heading {
+				color: var(--white-alpha4);
+			}
+		}
+		.field-box {
+			margin: 0 20px;
+			.input-group {
+				align-items: center;
+				margin-bottom: 30px;
+				svg {
+					color: var(--themeColor);
+				}
+				input,select {
+					background-color: transparent !important;
+					border: 0;
+					border-radius: 0;
+					border-bottom: 1px solid var(--white-alpha3);
+					margin-left: 15px;
+					padding-left: 0;
+					@extend %posRelative;
+					color:var(--white) !important;
+                     outline: none !important;
+					&:focus {
+						box-shadow: none;
+						~ span {
+							width: calc(100% - 30px);
+						}
+					}
+          &::-webkit-inner-spin-button {
+              display:none;
+          }
+				}
+/*
+@-webkit-keyframes autofill {
+    0%,100% {
+        color: #fff;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-delay: 1s;
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+ */
+                input[type=file] ,select{
+                    &::-webkit-file-upload-button {
+                    background: transparent;
+                    border: 0;
+                    }
+
+                    &:valid {
+                        color:var(--white);
+                        &::-webkit-file-upload-button {
+                            color:var(--white);
+                            outline: none;
+                        }
+                    }
+                }
+               /**  select {
+                    &:valid {
+                        color:var(--red);
+                    }
+                    &:invalid {
+                        color:var(--orange);
+                    }
+                }*/
+
+                select,
+                input[type=file],
+                input[type=file]::-webkit-file-upload-button {
+                    color:#6c757d;
+                }
+
+                .sel {
+                    width:90%;
+                    &.style1 {
+                        select {
+                            option {
+                                background-color:transparent;
+                                color:var(--themeColor)
+                            }
+                        }
+                    }
+                }
+				span {
+					@extend %posAbsolute;
+					height: 100%;
+					width: 0;
+					left: 30px;
+					transition: all 700ms;
+					border-bottom: 1px solid var(--themeColor);
+				}
+				.password-field {
+					padding-right: 35px;
+				}
+				#password-icon-btn {
+					@extend %posAbsolute;
+					right: 10px;
+					cursor: pointer;
+					z-index: 5;
+				}
+			}
+			.btn {
+				border-radius: 20px;
+				padding: 8px 30px;
+				color:var(--white);
+				margin-top: 20px;
+                &.m-b-70 {
+                    margin-bottom:70px;
+                }
+			}
+		}
+		&:hover {
+			box-shadow: 0px 0px 9px 1px var(--white-alpha8);
+		}
+	}
+}

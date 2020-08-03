@@ -84,3 +84,61 @@
 
   @return mix($color-base, $color, $level * $theme-color-interval);
 }
+
+%wAuto {
+  width: auto;
+}
+%w100 {
+  width: 100%;
+}
+%hAuto {
+  height: auto;
+}
+%h100 {
+  height: 100%;
+}
+%mAuto {
+  margin: auto;
+}
+%mAuto10 {
+  margin: 0 auto 10px;
+}
+
+%floatToCenter {
+  @extend %posAbsolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+%floatToYCenter {
+  @extend %posAbsolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+%floatToXCenter {
+  @extend %posAbsolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%flexCenter {
+  @extend %displayFlex;
+  align-items: center;
+  justify-content: center;
+}
+
+%posAbsolute {
+  position: absolute;
+}
+%posRelative {
+  position: relative;
+}
+%displayFlex {
+  display: flex;
+}
+%overflow-h {
+  overflow: hidden;
+}
+%borderCircle {
+  border-radius: 50%;
+}

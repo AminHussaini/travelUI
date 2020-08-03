@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="travelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="c_id" Type="int" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="message" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question1" Type="varchar" MaxLength="50" />
+    <Property Name="Question2" Type="varchar" MaxLength="50" />
+    <Property Name="Question3" Type="varchar" MaxLength="50" />
+    <Property Name="Question4" Type="varchar" MaxLength="50" />
+    <Property Name="Question5" Type="varchar" MaxLength="50" />
+    <Property Name="Question6" Type="varchar" MaxLength="50" />
+    <Property Name="Question7" Type="varchar" MaxLength="50" />
+    <Property Name="Question8" Type="varchar" MaxLength="50" />
+    <Property Name="t_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="contact" Type="varchar" MaxLength="50" />
+    <Property Name="Website" Type="varchar" MaxLength="70" />
+    <Property Name="Facilities" Type="varchar" MaxLength="200" />
+    <Property Name="Room_available" Type="varchar" MaxLength="50" />
+    <Property Name="c_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Hotel_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="h_path" Type="varchar" MaxLength="50" />
+    <Property Name="h_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Resort">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="Facilities" Type="varchar" MaxLength="200" />
+    <Property Name="c_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Resort_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="r_path" Type="varchar" MaxLength="50" />
+    <Property Name="r_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Resturant">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="contact" Type="varchar" MaxLength="50" />
+    <Property Name="Website" Type="varchar" MaxLength="70" />
+    <Property Name="Facilities" Type="varchar" MaxLength="200" />
+    <Property Name="Table_available" Type="varchar" MaxLength="50" />
+    <Property Name="c_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Resturant_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="r_path" Type="varchar" MaxLength="50" />
+    <Property Name="r_id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_travel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="c_id" Type="int" />
+    <Property Name="price" Type="money" />
+    <Property Name="seat_available" Type="int" />
+    <Property Name="class" Type="varchar" MaxLength="50" />
+    <Property Name="from_route" Type="varchar" MaxLength="50" />
+    <Property Name="to_route" Type="varchar" MaxLength="50" />
+    <Property Name="pic" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="pass" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="pic" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tou_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_path" Type="varchar" MaxLength="50" />
+    <Property Name="t_id" Type="int" />
+  </EntityType>
+  <EntityType Name="touristSpot">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="c_id" Type="int" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="postalcode" Type="varchar" MaxLength="50" />
+    <Property Name="detail" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__city__c_id__276EDEB3">
+    <End Role="country" Type="Self.country" Multiplicity="0..1" />
+    <End Role="city" Type="Self.city" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="city">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__feedback__t_id__45F365D3">
+    <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+    <End Role="feedback" Type="Self.feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="t_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hotel__c_id__32E0915F">
+    <End Role="city" Type="Self.city" Multiplicity="0..1" />
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Hotel">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hotel_imag__h_id__35BCFE0A">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="0..1" />
+    <End Role="Hotel_images" Type="Self.Hotel_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Hotel_images">
+        <PropertyRef Name="h_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Resort__c_id__3E52440B">
+    <End Role="city" Type="Self.city" Multiplicity="0..1" />
+    <End Role="Resort" Type="Self.Resort" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Resort">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Resort_ima__r_id__412EB0B6">
+    <End Role="Resort" Type="Self.Resort" Multiplicity="0..1" />
+    <End Role="Resort_images" Type="Self.Resort_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resort">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Resort_images">
+        <PropertyRef Name="r_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Resturant___r_id__3B75D760">
+    <End Role="Resturant" Type="Self.Resturant" Multiplicity="0..1" />
+    <End Role="Resturant_images" Type="Self.Resturant_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resturant">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Resturant_images">
+        <PropertyRef Name="r_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Resturant__c_id__38996AB5">
+    <End Role="city" Type="Self.city" Multiplicity="0..1" />
+    <End Role="Resturant" Type="Self.Resturant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Resturant">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_travel__c_id__300424B4">
+    <End Role="city" Type="Self.city" Multiplicity="0..1" />
+    <End Role="tbl_travel" Type="Self.tbl_travel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_travel">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tou_images__t_id__2D27B809">
+    <End Role="touristSpot" Type="Self.touristSpot" Multiplicity="0..1" />
+    <End Role="tou_images" Type="Self.tou_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="touristSpot">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tou_images">
+        <PropertyRef Name="t_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__touristSpo__c_id__2A4B4B5E">
+    <End Role="city" Type="Self.city" Multiplicity="0..1" />
+    <End Role="touristSpot" Type="Self.touristSpot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="touristSpot">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="travelModelStoreContainer">
+    <EntitySet Name="city" EntityType="Self.city" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="country" EntityType="Self.country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="feedback" EntityType="Self.feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotel_images" EntityType="Self.Hotel_images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resort" EntityType="Self.Resort" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resort_images" EntityType="Self.Resort_images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resturant" EntityType="Self.Resturant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resturant_images" EntityType="Self.Resturant_images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_travel" EntityType="Self.tbl_travel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_user" EntityType="Self.tbl_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tou_images" EntityType="Self.tou_images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="touristSpot" EntityType="Self.touristSpot" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__city__c_id__276EDEB3" Association="Self.FK__city__c_id__276EDEB3">
+      <End Role="country" EntitySet="country" />
+      <End Role="city" EntitySet="city" />
+    </AssociationSet>
+    <AssociationSet Name="FK__feedback__t_id__45F365D3" Association="Self.FK__feedback__t_id__45F365D3">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="feedback" EntitySet="feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hotel__c_id__32E0915F" Association="Self.FK__Hotel__c_id__32E0915F">
+      <End Role="city" EntitySet="city" />
+      <End Role="Hotel" EntitySet="Hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hotel_imag__h_id__35BCFE0A" Association="Self.FK__Hotel_imag__h_id__35BCFE0A">
+      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="Hotel_images" EntitySet="Hotel_images" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Resort__c_id__3E52440B" Association="Self.FK__Resort__c_id__3E52440B">
+      <End Role="city" EntitySet="city" />
+      <End Role="Resort" EntitySet="Resort" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Resort_ima__r_id__412EB0B6" Association="Self.FK__Resort_ima__r_id__412EB0B6">
+      <End Role="Resort" EntitySet="Resort" />
+      <End Role="Resort_images" EntitySet="Resort_images" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Resturant___r_id__3B75D760" Association="Self.FK__Resturant___r_id__3B75D760">
+      <End Role="Resturant" EntitySet="Resturant" />
+      <End Role="Resturant_images" EntitySet="Resturant_images" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Resturant__c_id__38996AB5" Association="Self.FK__Resturant__c_id__38996AB5">
+      <End Role="city" EntitySet="city" />
+      <End Role="Resturant" EntitySet="Resturant" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_travel__c_id__300424B4" Association="Self.FK__tbl_travel__c_id__300424B4">
+      <End Role="city" EntitySet="city" />
+      <End Role="tbl_travel" EntitySet="tbl_travel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tou_images__t_id__2D27B809" Association="Self.FK__tou_images__t_id__2D27B809">
+      <End Role="touristSpot" EntitySet="touristSpot" />
+      <End Role="tou_images" EntitySet="tou_images" />
+    </AssociationSet>
+    <AssociationSet Name="FK__touristSpo__c_id__2A4B4B5E" Association="Self.FK__touristSpo__c_id__2A4B4B5E">
+      <End Role="city" EntitySet="city" />
+      <End Role="touristSpot" EntitySet="touristSpot" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
